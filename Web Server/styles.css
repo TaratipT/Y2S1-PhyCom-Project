@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f0f2f5, #e1e5ec);
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    pointer-events: pointer;
+    cursor: default;
+}
+
+h1:hover {
+    color: #4caf50;
+    transform: scale(1.1);
+}
+
+#data-display {
+    text-align: center;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+p {
+    font-size: 1.3em;
+    color: #666;
+}
+
+#counter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+#counter-container p {
+    margin-right: 15px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+#counter {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 15px;
+    background-color: #4caf50;
+    color: #ffffff;
+    border-radius: 8px;
+    width: 80px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#mqtt-data-list {
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.data-item {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+.data-item.in {
+    background-color: #4caf50;
+    color: #e9f5ee;
+}
+
+.data-item.out {
+    background-color: #f44336;
+    color: #fceaea;
+}
+
+#mqtt-data-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+#mqtt-data-list::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+    border-radius: 4px;
+}
+
+@mqtt-data-list::-webkit-scrollbar-thumb:hover {
+    background-color: #bbbbbb;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
